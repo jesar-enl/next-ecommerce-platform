@@ -1,11 +1,9 @@
 import { ThemeProvider } from '@/components/theme-provider';
-
-import Header from '@/components/Header';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
-const roboto = Roboto({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700'],
 });
@@ -13,6 +11,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'NextJs E-Commerce Application',
   description: 'A fully featured e-commerce application built with NextJs',
+  icons: '/images/logo-no-background.png',
 };
 
 export default function RootLayout({
@@ -22,15 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={roboto.className}>
+      <body className={poppins.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <main className="my-2">{children}</main>
         </ThemeProvider>
       </body>
     </html>
