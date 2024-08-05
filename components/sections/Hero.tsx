@@ -19,10 +19,3 @@ export default function Hero() {
     </section>
   );
 }
-/**
-      heroPadding: {
-        top: '62px',
-        right: '43px',
-        bottom: '37px',
-        left: '39px',
-      }, */
